@@ -13,6 +13,7 @@ public partial class VueListeProduits : ContentPage
 		InitializeComponent();
         this.LoadProduits();
 
+
     }
 
     private async void LoadProduits()
@@ -28,4 +29,6 @@ public partial class VueListeProduits : ContentPage
             //await DisplayAlert("Erreur", $"Impossible de charger les produits : {ex.Message}", "OK");
         }
     }
-}
+
+    
+    }

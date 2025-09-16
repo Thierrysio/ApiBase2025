@@ -12,15 +12,17 @@ namespace ApiBase2025.Modeles
         #region Proprietes
         private int _id;
         private double _prix;
+        private CategoriePromo _laCategoriePromo;
 
 
         #endregion
 
         #region Constructeurs
-        public Promo(int id, double prix)
+        public Promo(int id, double prix, CategoriePromo laCategoriePromo)
         {
             Id = id;
             Prix = prix;
+            LaCategoriePromo = laCategoriePromo;
         }
 
 
@@ -31,6 +33,8 @@ namespace ApiBase2025.Modeles
         public int Id { get => _id; set => _id = value; }
         [JsonProperty("prix")]
         public double Prix { get => _prix; set => _prix = value; }
+        [JsonProperty("laCategoriePromo")]
+        public CategoriePromo LaCategoriePromo { get => _laCategoriePromo; set => _laCategoriePromo = value; }
         #endregion
 
         #region Methodes
