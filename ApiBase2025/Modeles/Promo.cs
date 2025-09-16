@@ -7,31 +7,30 @@ using System.Threading.Tasks;
 
 namespace ApiBase2025.Modeles
 {
-    public class Produit
+    public class Promo
     {
         #region Proprietes
         private int _id;
-        private string _nomProduit;
-        private List<Promo> _lesPromos;
-         #endregion
+        private double _prix;
+
+
+        #endregion
 
         #region Constructeurs
-        public Produit(int id, string nomProduit)
+        public Promo(int id, double prix)
         {
             Id = id;
-            NomProduit = nomProduit;
-            LesPromos = new List<Promo>(); 
+            Prix = prix;
         }
+
+
         #endregion
 
         #region Getters/Setters
         [JsonProperty("id")]
         public int Id { get => _id; set => _id = value; }
-        [JsonProperty("nomProduit")]
-        public string NomProduit { get => _nomProduit; set => _nomProduit = value; }
-        [JsonProperty("lesPromos")] 
-        public List<Promo> LesPromos { get => _lesPromos; set => _lesPromos = value; }
-
+        [JsonProperty("prix")]
+        public double Prix { get => _prix; set => _prix = value; }
         #endregion
 
         #region Methodes
