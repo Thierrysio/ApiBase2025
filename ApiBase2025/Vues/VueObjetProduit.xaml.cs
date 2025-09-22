@@ -7,19 +7,26 @@ public partial class VueObjetProduit : ContentPage
 {
     private readonly Apis _api = new Apis();
 
-    public VueObjetProduit()
+    public VueObjetProduit(Produit P)
 	{
 		InitializeComponent();
-		this.recupererObjet();
+		this.recupererObjet(P);
 	}
 
-	private async Task<Produit> recupererObjet()
+    private async Task<Produit> recupererObjet(Produit P)
 	{
-		Produit resultat ;
-		Produit P = new Produit(2);
-		//imlementation de l'appel a l'Api (api/mobile/getProduit) et retour de l'objet
-		resultat = await _api.GetOneAsync<Produit>("api/mobile/getProduit", P);
-        return resultat;
-	}
+		try 
+		{
+            return await _api.GetOneAsync<Produit>("api/mobile/getProduit", P);
+
+        }
+		catch(Exception e)
+		{
+            await DisplayAlert("Erreur", $"Impossible de charger les produits : {e.Message}", "OK");
+			return;
+        }
+
+
+    }
 
 }
