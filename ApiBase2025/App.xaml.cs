@@ -8,7 +8,7 @@ namespace ApiBase2025
         {
             InitializeComponent();
 
-            MainPage = new VueListeProduits();
+            MainPage = new VueObjetProduit();
         }
     }
 }
